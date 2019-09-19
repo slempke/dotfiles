@@ -1,0 +1,69 @@
+; vim: ft=gitconfig
+
+[user]
+	name = Stephen Lempke
+	email = lempkest@gmail.com
+	signingkey = 3CAEE22E19E7688D56C44E42246F0D23D3E5A795
+
+[include]
+  path = ~/.gitconfig.local
+
+[gpg]
+	program = /usr/local/MacGPG2/bin/gpg2
+
+[commit]
+  verbose = true
+  gpgsign = true
+
+[branch]
+  autosetupmerge = always
+  autosetuprebase = always
+
+[branch "master"]
+  rebase = true
+
+[pull]
+  rebase = true
+
+[push]
+  default = simple
+  followTags = true
+
+[fetch]
+  prune = true
+
+# URL shorthands
+[url "git@github.com:"]
+  insteadOf = "gh:"
+  pushInsteadOf = "github:"
+  pushInsteadOf = "git://github.com/"
+
+[url "git://github.com/"]
+  insteadOf = "github:"
+
+[url "git@gist.github.com:"]
+  insteadOf = "gst:"
+  pushInsteadOf = "gist:"
+  pushInsteadOf = "git://gist.github.com/"
+
+[url "git://gist.github.com/"]
+  insteadOf = "gist:"
+
+[url "git@gitlab.com:"]
+  insteadOf = "gl:"
+  pushInsteadOf = "gitlab:"
+  pushInsteadOf = "git://gitlab.com/"
+
+[url "git://gitlab.com/"]
+  insteadOf = "gitlab:"
+
+[url "git@bitbucket.org:"]
+  insteadOf = "bb:"
+  pushInsteadOf = "bitbucket:"
+  pushInsteadOf = "git://bitbucket.org/"
+
+[url "git://bitbucket.org/"]
+  insteadOf = "bitbucket:"
+
+[credential]
+  helper = osxkeychain

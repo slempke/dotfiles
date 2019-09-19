@@ -1,0 +1,181 @@
+#!/usr/bin/env bash
+
+# https://vaneyckt.io/posts/safer_bash_scripts_with_set_euxo_pipefail/
+set -Eueo pipefail
+
+# =======================================================================
+# = Helpers & setting some variables
+# =======================================================================
+
+DOTFILES_DIR="$HOME/.dotfiles"
+
+tput sgr0
+RED=$(tput setaf 1)
+ORANGE=$(tput setaf 3)
+GREEN=$(tput setaf 2)
+PURPLE=$(tput setaf 5)
+BLUE=$(tput setaf 4)
+WHITE=$(tput setaf 7)
+BOLD=$(tput bold)
+RESET=$(tput sgr0)
+
+log() {
+  local LABEL="[$1]"
+  local COLOR="$2"
+  shift
+  shift
+  local MSG=("$@")
+  printf "${COLOR}${LABEL}%*s${RESET}" $(($(tput cols) - ${#LABEL})) | tr ' ' '='
+  for M in "${MSG[@]}"; do
+    let COL=$(tput cols)-2-${#M}
+    printf "%s%${COL}s${RESET}" "$COLOR* $M"
+  done
+  printf "${COLOR}%*s${RESET}\n\n\n" $(tput cols) | tr ' ' '='
+}
+
+log_error() {
+  log "FAIL" "$RED" "$@"
+  exit 1
+}
+
+log_info() {
+  log "INFO" "$ORANGE" "$@"
+}
+
+log_success() {
+  log "OK" "$GREEN" "$@"
+}
+
+get_permission() {
+  # Ask for the administrator password upfront.
+  sudo -v
+
+  # Keep-alive: update existing `sudo` time stamp until the script has finished.
+  while true; do
+    sudo -n true
+    sleep 60
+    kill -0 "$$" || exit
+  done 2>/dev/null &
+}
+
+print_main_banner() {
+  cd "$HOME"
+  command cat <<EOF
+$BLUE
+
+              .::            .::      .::    .::
+              .::            .::    .:    .: .::
+              .::   .::    .:.: .:.:.: .:    .::   .::     .::::
+          .:: .:: .::  .::   .::    .::  .:: .:: .:   .:: .::
+        .:   .::.::    .::  .::    .::  .:: .::.::::: .::  .:::
+        .:   .:: .::  .::   .::    .::  .:: .::.:            .::
+        .:: .::   .::       .::   .::  .::.:::  .::::   .:: .::
+
+
+
+$RESET
+EOF
+
+  if [ -d "$DOTFILES_DIR/.git" ]; then
+    command cat <<EOF
+$BLUE
+                      $RESET~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$BLUE
+                      $RESET$BLUE
+                      $RESET   $(git --git-dir "$DOTFILES_DIR/.git" --work-tree "$DOTFILES_DIR" log -n 1 --pretty=format:'%C(yellow)commit:  %h') $BLUE
+                      $RESET   $(git --git-dir "$DOTFILES_DIR/.git" --work-tree "$DOTFILES_DIR" log -n 1 --pretty=format:'%C(red)date:    %ad' --date=short) $BLUE
+                      $RESET   $(git --git-dir "$DOTFILES_DIR/.git" --work-tree "$DOTFILES_DIR" log -n 1 --pretty=format:'%C(cyan)author:  %an') $BLUE
+                      $RESET   $(git --git-dir "$DOTFILES_DIR/.git" --work-tree "$DOTFILES_DIR" log -n 1 --pretty=format:'%C(green)message: %s') $BLUE
+                      $RESET$BLUE
+                      $RESET~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~$BLUE
+$RESET
+EOF
+  fi
+}
+
+print_prompt() {
+  echo "What do you want to do?"
+  PS3="Enter your choice (must be a number): "
+  options=("option_1" "option_2" "option_3" "option_4" "option_5" "option_6" "option_7" "Quit")
+  select opt in "${options[@]}"; do
+    case $opt in
+    "option_1")
+      option_1
+      break
+      ;;
+    "option_2")
+      option_2
+      break
+      ;;
+    "option_3")
+      option_3
+      break
+      ;;
+    "option_4")
+      option_4
+      break
+      ;;
+    "option_5")
+      option_5
+      break
+      ;;
+    "option_6")
+      option_6
+      break
+      ;;
+    "option_7")
+      option_7
+      break
+      ;;
+    "Quit")
+      break
+      ;;
+    *)
+      echo "Invalid option"
+      break
+      ;;
+    esac
+  done
+}
+
+# =======================================================================
+# = Main functions
+# =======================================================================
+
+option_1() {
+  log_info "option_1"
+}
+
+option_2() {
+  log_info "option_2"
+}
+
+option_3() {
+  log_info "option_3"
+}
+
+option_4() {
+  log_info "option_4"
+}
+
+option_5() {
+  log_info "option_5"
+}
+
+option_6() {
+  log_info "option_6"
+}
+
+option_7() {
+  log_info "option_7"
+}
+
+run() {
+  print_main_banner
+  print_prompt
+}
+
+# =======================================================================
+# = Run!
+# =======================================================================
+
+run
