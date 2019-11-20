@@ -1,5 +1,0 @@
-# Brewfile-cask
-#
-# Maintained by Stephen Lempke <me@stephenlempke.com>
-
-cask_args appdir: '/Applications'
