@@ -1,0 +1,4 @@
+*.json diff=json
+*.png diff=exif
+*.jpg diff=exif
+*.t2d diff=xml

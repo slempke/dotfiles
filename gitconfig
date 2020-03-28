@@ -1,0 +1,46 @@
+[alias]
+	l = log --relative-date --decorate --graph --abbrev-commit
+	ll = log --relative-date --decorate --all --graph --abbrev-commit
+[diff]
+	tool = vscode
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+[format]
+	pretty = format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s
+[include]
+	path = ~/.local/.gitconfig
+[merge]
+	tool = vscode
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
+[pager]
+	branch = false
+[user]
+	name = Stephen Lempke
+	email = lempkest@gmail.com
+[url "git@github.com:"]
+  insteadOf = "gh:"
+  pushInsteadOf = "github:"
+  pushInsteadOf = "git://github.com/"
+[url "git://github.com/"]
+  insteadOf = "github:"
+[url "git@gist.github.com:"]
+  insteadOf = "gst:"
+  pushInsteadOf = "gist:"
+  pushInsteadOf = "git://gist.github.com/"
+[url "git://gist.github.com/"]
+  insteadOf = "gist:"
+[url "git@gitlab.com:"]
+  insteadOf = gl:
+  pushInsteadOf = gitlab:
+  pushInsteadOf = git://gitlab.com/
+[url "git://gitlab.com/"]
+  insteadOf = gitlab:
+[url "git@bitbucket.org:"]
+  insteadOf = bb:
+  pushInsteadOf = bitbucket:
+  pushInsteadOf = git://bitbucket.org/
+[url "git://bitbucket.org/"]
+  insteadOf = bitbucket:
+[credential]
+  helper = osxkeychain

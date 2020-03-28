@@ -1,0 +1,80 @@
+#!/bin/sh
+
+read -p "${orange}brew doctor?${reset} [${green}y${reset}/${red}N${reset}] " -n 1 -r
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  echo ""
+  echo "${green}> brew doctor${reset}"
+  brew doctor
+fi
+
+read -p "${orange}brew cleanup?${reset} [${green}y${reset}/${red}N${reset}] " -n 1 -r
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  echo ""
+  echo "${green}> brew cleanup${reset}"
+  brew cleanup
+fi
+
+read -p "${orange}brew upgrade?${reset} [${green}y${reset}/${red}N${reset}] " -n 1 -r
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  echo ""
+  echo "${green}> brew upgrade${reset}"
+  brew upgrade
+fi
+
+read -p "${orange}brew update?${reset} [${green}y${reset}/${red}N${reset}] " -n 1 -r
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  echo ""
+  echo "${green}> brew update${reset}"
+  brew update
+fi
+
+read -p "${orange}brew bundle check?${reset} [${green}y${reset}/${red}N${reset}] " -n 1 -r
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  echo ""
+  echo "${green}> brew bundle check --file=~/.dotfiles/Brewfile${reset}"
+  brew bundle check --file=~/.dotfiles/Brewfile
+fi
+
+read -p "${orange}brew bundle install?${reset} [${green}y${reset}/${red}N${reset}] " -n 1 -r
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  echo ""
+  echo "${green}> brew bundle install --file=~/.dotfiles/Brewfile${reset}"
+  brew bundle install --file=~/.dotfiles/Brewfile
+fi
+
+read -p "${orange}brew bundle cleanup?${reset} [${green}y${reset}/${red}N${reset}] " -n 1 -r
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  echo ""
+  echo "${green}> brew bundle cleanup --file=~/.dotfiles/Brewfile${reset}"
+  brew bundle cleanup --file=~/.dotfiles/Brewfile
+
+  read -p "${orange}brew bundle cleanup --force?${reset} [${green}y${reset}/${red}N${reset}] " -n 1 -r
+  if [[ $REPLY =~ ^[Yy]$ ]]; then
+    echo ""
+    echo "${green}> brew bundle cleanup --force --file=~/.dotfiles/Brewfile${reset}"
+    brew bundle cleanup --force --file=~/.dotfiles/Brewfile
+  fi
+fi
+
+read -p "${orange}npm doctor?${reset} [${green}y${reset}/${red}N${reset}] " -n 1 -r
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  echo ""
+  echo "${green}> npm doctor${reset}"
+  npm doctor
+fi
+
+read -p "${orange}npm install -g npm?${reset} [${green}y${reset}/${red}N${reset}] " -n 1 -r
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  echo ""
+  echo "${green}> npm install -g npm${reset}"
+  npm install -g npm
+fi
+
+read -p "${orange}ncu -g?${reset} [${green}y${reset}/${red}N${reset}] " -n 1 -r
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  echo ""
+  echo "${green}> ncu -g${reset}"
+  ncu -g
+fi
+
+echo "${green}> DONE${reset}"

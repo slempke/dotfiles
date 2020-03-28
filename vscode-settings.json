@@ -1,0 +1,244 @@
+{
+    "files.exclude": {
+        "**/.DS_Store": true,
+        "**/.git": true
+    },
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.eol": "\n",
+    "workbench.list.horizontalScrolling": true,
+    "workbench.activityBar.visible": false,
+    "workbench.startupEditor": "none",
+    "workbench.settings.editor": "json",
+    "workbench.editor.showIcons": true,
+    "workbench.settings.enableNaturalLanguageSearch": false,
+    "workbench.colorTheme": "Dracula Pro",
+    "workbench.iconTheme": "Monokai Pro (Filter Spectrum) Icons",
+    "editor.renderLineHighlight": "line",
+    "editor.gotoLocation.multiple": "goto",
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true,
+        "source.fixAll.eslint": true
+    },
+    "editor.hideCursorInOverviewRuler": true,
+    "editor.scrollBeyondLastLine": false,
+    "editor.multiCursorModifier": "alt",
+    "editor.overviewRulerBorder": false,
+    "editor.overviewRulerLanes": 0,
+    "editor.renderIndentGuides": true,
+    "editor.folding": true,
+    "editor.snippetSuggestions": "top",
+    "editor.lightbulb.enabled": false,
+    "editor.minimap.enabled": false,
+    "editor.cursorBlinking": "solid",
+    "editor.lineNumbers": "on",
+    "editor.cursorStyle": "line",
+    "window.restoreWindows": "all",
+    "window.newWindowDimensions": "maximized",
+    "debug.openDebug": "neverOpen",
+    "debug.showInStatusBar": "never",
+    "debug.toolBarLocation": "hidden",
+    "editor.fontFamily": "Operator Mono",
+    "search.quickOpen.includeHistory": false,
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/.git": true,
+        "dist": true,
+        "out": true,
+        "coverage": true
+    },
+    "terminal.integrated.copyOnSelection": true,
+    "explorer.openEditors.visible": 0,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.decorations.badges": false,
+    "python.linting.pylintArgs": [
+        "--errors-only"
+    ],
+    "code-runner.clearPreviousOutput": true,
+    "code-runner.executorMap": {
+        "python": "python3",
+        "typescript": "ts-node --transpile-only"
+    },
+    "editor.formatOnSave": true,
+    "[javascript]": {
+        "editor.formatOnSave": true
+    },
+    "[vue]": {
+        "editor.formatOnSave": false
+    },
+    "prettier.disableLanguages": [
+        "javascript",
+        "javascriptreact",
+        "vue"
+    ],
+    "eslint.alwaysShowStatus": true,
+    "eslint.autoFixOnSave": true,
+    "eslint.options": {
+        "extensions": [
+            ".html",
+            ".js",
+            ".vue",
+            ".jsx"
+        ]
+    },
+    "eslint.validate": [
+        {
+            "language": "html",
+            "autoFix": true
+        },
+        {
+            "language": "vue",
+            "autoFix": true
+        },
+        {
+            "language": "javascript",
+            "autoFix": true
+        },
+        {
+            "language": "javascriptreact",
+            "autoFix": true
+        }
+    ],
+    "prettier.requireConfig": true,
+    "prettier.ignorePath": "**/*.vue",
+    "code-runner.runInTerminal": false,
+    "go.useLanguageServer": true,
+    "go.languageServerExperimentalFeatures": {
+        "diagnostics": true
+    },
+    "[go]": {
+        "editor.snippetSuggestions": "none",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
+    },
+    "go.liveErrors": {
+        "enabled": true,
+        "delay": 500
+    },
+    "go.lintTool": "golint",
+    "go.lintOnSave": "package",
+    "explorer.confirmDelete": false,
+    "python.pythonPath": "/usr/local/bin/python3",
+    "python.formatting.provider": "black",
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": false,
+    "typescript.check.npmIsInstalled": false,
+    "typescript.updateImportsOnFileMove.enabled": "never",
+    "javascript.updateImportsOnFileMove.enabled": "never",
+    "eslint.packageManager": "yarn",
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "git.ignoreLimitWarning": true,
+    "git.enableSmartCommit": true,
+    "git.ignoreMissingGitWarning": true,
+    "gitlens.codeLens.enabled": false,
+    "gitlens.keymap": "chorded",
+    "gitlens.codeLens.scopes": [
+        "containers",
+        "document"
+    ],
+    "gitlens.views.fileHistory.enabled": true,
+    "gitlens.views.lineHistory.enabled": true,
+    "gitlens.advanced.messages": {
+        "suppressFileNotUnderSourceControlWarning": true,
+        "suppressShowKeyBindingsNotice": true,
+        "suppressUpdateNotice": true
+    },
+    "extensions.ignoreRecommendations": true,
+    "extensions.showRecommendationsOnlyOnDemand": true,
+    "editor.occurrencesHighlight": false,
+    "editor.wordWrapColumn": 100,
+    "editor.wordWrap": "on",
+    "editor.tabSize": 2,
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "git.detectSubmodules": false,
+    "gitlens.currentLine.format": "${message}",
+    "peacock.favoriteColors": [
+        {
+            "name": "Angular Red",
+            "value": "#b52e31"
+        },
+        {
+            "name": "Auth0 Orange",
+            "value": "#eb5424"
+        },
+        {
+            "name": "Azure Blue",
+            "value": "#007fff"
+        },
+        {
+            "name": "C# Purple",
+            "value": "#68217A"
+        },
+        {
+            "name": "Gatsby Purple",
+            "value": "#639"
+        },
+        {
+            "name": "Go Cyan",
+            "value": "#5dc9e2"
+        },
+        {
+            "name": "Java Blue-Gray",
+            "value": "#557c9b"
+        },
+        {
+            "name": "JavaScript Yellow",
+            "value": "#f9e64f"
+        },
+        {
+            "name": "Mandalorian Blue",
+            "value": "#1857a4"
+        },
+        {
+            "name": "Node Green",
+            "value": "#215732"
+        },
+        {
+            "name": "React Blue",
+            "value": "#00b3e6"
+        },
+        {
+            "name": "Something Different",
+            "value": "#832561"
+        },
+        {
+            "name": "Vue Green",
+            "value": "#42b883"
+        }
+    ],
+    "terminal.integrated.fontFamily": "Dank Mono",
+    "editor.tabCompletion": "on",
+    "prettier.singleQuote": true,
+    "prettier.trailingComma": "all",
+    "debug.console.fontFamily": "Dank Mono",
+    "editor.cursorSmoothCaretAnimation": true,
+    "editor.smoothScrolling": true,
+    "editor.stablePeek": true,
+    "editor.suggestSelection": "recentlyUsedByPrefix",
+    "debug.inlineValues": true,
+    "terminal.integrated.cursorStyle": "line",
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": true
+    },
+    "editor.lineHeight": 22,
+    "editor.fontLigatures": true,
+    "debug.console.fontSize": 14,
+    "terminal.integrated.fontSize": 14,
+    "workbench.fontAliasing": "antialiased",
+    "window.zoomLevel": 0,
+    "editor.fontSize": 18,
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "leetcode.workspaceFolder": "/Users/stephenlempke/.leetcode",
+    "leetcode.defaultLanguage": "java",
+    "peacock.affectAccentBorders": true,
+    "peacock.affectTabActiveBorder": true
+}

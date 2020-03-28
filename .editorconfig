@@ -1,0 +1,37 @@
+# EditorConfig: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+end_of_line = lf
+insert_final_newline = true
+indent_style = space
+indent_size = 2
+
+[Brewfile]
+insert_final_newline = false
+trim_trailing_whitespace = true
+
+[Makefile]
+indent_style = tab
+
+[scripts/*]
+indent_style = space
+indent_size  = 2
+
+[.zshrc]
+indent_style = space
+indent_size  = 2
+
+[*.md]
+indent_style = space
+indent_size  = 2
+
+[*.json]
+indent_style = space
+indent_size  = 2
+
+[karabiner.json]
+indent_size  = 4
