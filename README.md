@@ -3,7 +3,7 @@
 
 ## Installation
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/rgomezcasas/dotfiles/master/installer)
+bash <(curl -s https://raw.githubusercontent.com/slempke/dotfiles/master/installer)
 ```
 
 ## Update
