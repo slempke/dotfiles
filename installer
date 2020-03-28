@@ -20,4 +20,4 @@ echo "Cloning into: '$DOTFILES_PATH'"
 
 git clone --depth 1 git@github.com:slempke/dotfiles.git "$DOTFILES_PATH"
 
-"$DOTFILES_PATH/bin/dot" self install
+# "$DOTFILES_PATH/bin/dot" self install
